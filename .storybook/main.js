@@ -1,15 +1,12 @@
 module.exports = {
-  "stories": [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+  stories: [
+    '../stories/**/*.stories.mdx',
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)',
   ],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials"
-  ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "webpack5"
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  framework: '@storybook/react',
+  core: {
+    builder: 'webpack5',
   },
-  "typescript": { "reactDocgen": false } // https://issuehunt.io/r/storybookjs/storybook/issues/15336
-}
+  typescript: { reactDocgen: false }, // https://issuehunt.io/r/storybookjs/storybook/issues/15336
+};

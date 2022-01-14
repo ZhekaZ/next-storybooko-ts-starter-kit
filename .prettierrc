@@ -1,0 +1,14 @@
+{
+  "bracketSpacing": true,
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "importOrder": [
+      "^(@components|@pages|@stories)/?(.*)$",
+      "^(@services|@hooks)/?(.*)$",
+      "^(@styles)/?(.*)$",
+      "^[./]"
+  ],
+  "importOrderSeparation": true
+}
