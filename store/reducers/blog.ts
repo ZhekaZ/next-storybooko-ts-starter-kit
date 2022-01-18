@@ -1,5 +1,5 @@
-import * as actions from '@redux/actions/blog';
-import { InferActionTypes } from '@redux/helpers';
+import * as actions from '../actions/blog';
+import { InferActionTypes } from '../helpers';
 
 export type ActionTypes = ReturnType<InferActionTypes<typeof actions>>;
 

@@ -18,9 +18,8 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@pages/*": ["./pages/*"],
-      "@stories/*": ["./stories/*"],
-      "@interfaces/*": ["./interfaces/*"],
-      "@redux/*": ["./redux/*"],
+      "@store/*": ["./store/*"],
+      "@stories/*": ["./stories/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -1,7 +1,8 @@
-import { blogSelector } from '@redux/selectors';
 import Router from 'next/router';
 import React from 'react';
 import { useSelector } from 'react-redux';
+
+import { blogSelector } from '../store/selectors';
 
 function BlogPage() {
   const blogData = useSelector(blogSelector);
