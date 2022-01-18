@@ -1,9 +1,12 @@
+import { blogSelector } from '@redux/selectors';
 import Router from 'next/router';
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-function BlogPage(props) {
-  console.log(props);
+function BlogPage() {
+  const blogData = useSelector(blogSelector);
+
+  console.log(blogData);
 
   return (
     <>
@@ -13,9 +16,9 @@ function BlogPage(props) {
   );
 }
 
-BlogPage.getInitialProps = async ({ store }) => {
-  store.dispatch({ type: 'SOME_ASYNC_ACTION_REQUEST' });
-  return { staticData: 'Hello world!' };
-};
+// BlogPage.getInitialProps = async () => {
+//   store.dispatch({ type: 'SOME_ASYNC_ACTION_REQUEST' });
+//   return { staticData: 'Hello world!' };
+// };
 
-export default connect((state) => state)(BlogPage);
+export default BlogPage;

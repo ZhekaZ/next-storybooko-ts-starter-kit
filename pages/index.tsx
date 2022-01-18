@@ -1,10 +1,23 @@
+import { userSelector } from '@redux/selectors';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import Router from 'next/router';
+import { useSelector } from 'react-redux';
 
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
+  const user = useSelector(userSelector);
+
+  const onTest = () => {
+    console.log(user);
+  };
+
+  const onGoBlog = () => {
+    Router.push('/blog');
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +30,12 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <div>
+          <button onClick={onTest}>check</button>
+          <span> | </span>
+          <button onClick={onGoBlog}>blog</button>
+        </div>
 
         <p className={styles.description}>
           Get started by editing{' '}

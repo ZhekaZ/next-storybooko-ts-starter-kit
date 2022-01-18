@@ -1,15 +1,19 @@
-// import { combineReducers } from 'redux';
+import * as actions from '@redux/actions/blog';
+import { InferActionTypes } from '@redux/helpers';
 
-// import { connectRouter } from "connected-react-router";
-// import { createBrowserHistory } from "history";
+export type ActionTypes = ReturnType<InferActionTypes<typeof actions>>;
 
-// export const history = createBrowserHistory();
+export interface IBlogState {
+  blog: any;
+  loading: boolean;
+}
 
-const initialState = {
+const initialState: IBlogState = {
   blog: {},
+  loading: true,
 };
 
-export default function blogReducer(state = initialState, action) {
+export default function blogReducer(state = initialState, action: ActionTypes) {
   switch (action.type) {
     case 'BLOG_LOADED':
       return {
@@ -21,10 +25,3 @@ export default function blogReducer(state = initialState, action) {
       return state;
   }
 }
-
-// const rootReducer = combineReducers({
-//   app: appReducer,
-//   // router: connectRouter(history),
-// });
-//
-// export default rootReducer;

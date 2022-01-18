@@ -19,6 +19,8 @@
       "@components/*": ["./components/*"],
       "@pages/*": ["./pages/*"],
       "@stories/*": ["./stories/*"],
+      "@interfaces/*": ["./interfaces/*"],
+      "@redux/*": ["./redux/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

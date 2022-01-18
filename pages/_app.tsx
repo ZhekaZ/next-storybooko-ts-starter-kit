@@ -1,9 +1,11 @@
-import type { AppProps } from 'next/app';
+import wrapper from '@redux/store';
+import withReduxSaga from 'next-redux-saga';
+import { AppProps } from 'next/app';
 
-import '../styles/globals.css';
+import { FC } from 'react';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => (
+  <Component {...pageProps} />
+);
 
-export default MyApp;
+export default wrapper.withRedux(withReduxSaga(WrappedApp));

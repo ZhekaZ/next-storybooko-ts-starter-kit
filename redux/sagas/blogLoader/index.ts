@@ -1,9 +1,9 @@
 // import { LOCATION_CHANGE } from 'connected-react-router';
-import { apply, call, fork, put, take, takeEvery } from 'redux-saga/effects';
+import { apply, call, put, takeEvery } from 'typed-redux-saga';
 
 function* loadBlogData(): Generator {
-  const request = yield call(fetch, 'https://swapi.dev/api/planets');
-  const data = yield apply(request, request.json);
+  const request: any = yield call(fetch, 'https://swapi.dev/api/planets');
+  const data: any = yield apply(request, request.json, []);
 
   console.log('blog data =>', data.results);
   yield put({ type: 'BLOG_LOADED', payload: data.results });

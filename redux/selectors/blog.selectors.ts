@@ -1,13 +1,10 @@
 import { createSelector } from 'reselect';
 
-const getUserState = (state) => state.user;
+const getBlogState = (state) => state.blog;
 
-export const userSelector = createSelector(
-  [getUserState],
-  (state) => state.user
-);
+export const blogSelector = createSelector([getBlogState], (state) => state);
 
-export const userLoadingSelector = createSelector(
-  [getUserState],
+export const blogLoadingSelector = createSelector(
+  [getBlogState],
   (state) => state.loading
 );

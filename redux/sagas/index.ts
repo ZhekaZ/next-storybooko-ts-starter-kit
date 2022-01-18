@@ -1,13 +1,17 @@
-import { actionChannel, all, call, spawn, take } from 'redux-saga/effects';
+import { actionChannel, all, call, spawn, take } from 'typed-redux-saga';
 
 import blogLoaderSaga from './blogLoader';
 import loadBasicData from './initialSagas';
 
-export function* fetchPlanets(signal): Generator {
+export function* fetchPlanets(): Generator {
+  // signal
   // worker
   console.log('LOAD_SOME_DATA starts');
 
-  const resp = yield call(fetch, 'https://swapi.dev/api/planets', { signal });
+  const resp: any = yield call(
+    fetch,
+    'https://swapi.dev/api/planets' // { signal }
+  );
   const data = yield call([resp, resp.json]);
 
   console.log('LOAD_SOME_DATA completed', data);
@@ -21,8 +25,6 @@ export function* loadOnAction(): Generator {
     yield take(channel);
 
     yield call(fetchPlanets);
-
-    console.log('LOG');
   }
 }
 

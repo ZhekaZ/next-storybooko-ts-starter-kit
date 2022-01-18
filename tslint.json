@@ -12,6 +12,7 @@
     "no-object-literal-type-assertion": false,
     "no-submodule-imports": false,
     "no-implicit-dependencies": false,
+    "no-console": false,
     "function-name": [
       true,
       {
